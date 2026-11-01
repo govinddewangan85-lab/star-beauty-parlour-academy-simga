@@ -1,0 +1,161 @@
+<!DOCTYPE html>  <html lang="hi">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<meta name="theme-color" content="#09070b">  
+<title>Star Beauty Parlour & Academy | Simga</title>  
+<style>  
+:root{--pink:#f32683;--gold:#f5c84b;--black:#09070b;--ink:#211824;--soft:#fff3f8;--line:#f1d5e2}  
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;background:#fff7fb;color:var(--ink)}  
+header{background:var(--black);color:white;position:sticky;top:0;z-index:20;border-bottom:2px solid var(--gold)}  
+.top{max-width:1100px;margin:auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}  
+.brand{display:flex;align-items:center;gap:10px}.brand-mark{font-size:32px;color:var(--gold)}.brand strong{display:block;color:var(--gold);font-family:Georgia,serif;font-size:clamp(17px,3vw,25px);letter-spacing:1px}.brand small{color:#ff8cbd;letter-spacing:2px;font-size:10px}  
+.menu-btn{background:transparent;color:var(--gold);border:1px solid #80652b;border-radius:8px;font-size:25px;padding:3px 12px;cursor:pointer}  
+nav{display:none;background:#171019;padding:8px 14px 14px;max-width:1100px;margin:auto;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}  
+nav.open{display:grid}nav button{border:1px solid #4c3441;background:#211824;color:#fff;padding:11px 8px;border-radius:8px;text-align:left;cursor:pointer}  
+nav button:hover{border-color:var(--pink);color:#ff8cbd}  
+main{max-width:1100px;margin:auto;padding:18px 14px 35px}.page{display:none}.page.active{display:block}  
+.hero{background:linear-gradient(115deg,rgba(5,3,8,.95),rgba(40,8,27,.87)),radial-gradient(circle at 85% 15%,#a54b70,transparent 45%);color:white;border:1px solid #5a3445;border-radius:18px;padding:30px 20px;text-align:center;overflow:hidden}  
+.hero .crown{font-size:42px;color:var(--gold)}.hero h1{font: bold clamp(27px,6vw,54px) Georgia,serif;color:var(--gold);margin:5px 0}.hero h2{color:#ff4e9c;letter-spacing:2px;font-size:clamp(20px,4vw,34px);margin:0}.hero p{color:#ffe5ef}.hero .tag{font:italic 20px Georgia;color:#fff}  
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:20px 0}.pill{border:1px solid var(--pink);color:#ffd5e7;border-radius:30px;padding:8px 13px;font-size:13px}  
+.location{background:#1b111b;color:white;border-radius:12px;padding:14px;text-align:center;margin-top:16px}.location b{color:var(--gold)}  
+.section-title{background:linear-gradient(90deg,var(--pink),#b90d58);color:white;border-radius:10px;padding:13px;text-align:center;margin:0 0 16px;font-size:20px}  
+.sub{color:#76606b;text-align:center;margin:-5px 0 18px}  
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}  
+.tile{border:0;border-radius:14px;padding:20px 12px;color:white;min-height:125px;text-align:center;font-size:17px;font-weight:bold;cursor:pointer;box-shadow:0 5px 14px #4b17301c}  
+.tile span{display:block;font-size:30px;margin-bottom:9px}.pink{background:linear-gradient(135deg,#ff2685,#c20d5d)}.blue{background:linear-gradient(135deg,#168bd8,#0754a5)}.green{background:linear-gradient(135deg,#1ebd75,#087b4a)}.orange{background:linear-gradient(135deg,#ff9b24,#db5a0b)}  
+.card{background:white;border:1px solid var(--line);border-radius:14px;padding:17px;margin:12px 0;box-shadow:0 5px 18px #4b17300b}  
+label{display:block;font-weight:bold;font-size:14px;margin:12px 0 6px}input,select,textarea{width:100%;padding:12px;border:1px solid #d9cbd2;border-radius:8px;font-size:15px;background:#fff}input:focus,select:focus,textarea:focus{outline:2px solid #ffc1dc;border-color:var(--pink)}  
+.btn{border:0;background:linear-gradient(90deg,var(--pink),#c30e60);color:white;padding:13px 18px;border-radius:9px;font-size:16px;font-weight:bold;cursor:pointer;width:100%;margin-top:15px}.btn.secondary{background:#211824}.btn.gold{background:linear-gradient(90deg,#d6a52e,#f0ca60);color:#211824}  
+.notice{background:#fff2d9;border-left:4px solid #e7a629;padding:12px;border-radius:7px;font-size:13px;line-height:1.5;margin:12px 0}  
+.payment-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.pay-option{padding:13px;border:1px solid #d9cbd2;border-radius:10px;background:#fff;text-align:center;cursor:pointer;font-weight:bold}.pay-option.selected{border:2px solid var(--pink);background:#fff0f7;color:#c20d5d}  
+.service{display:flex;gap:12px;align-items:center;padding:13px;border:1px solid var(--line);border-radius:10px;margin:8px 0;background:white}.service span{font-size:25px}.service b{display:block}.service small{color:#76606b}  
+footer{background:#09070b;color:white;text-align:center;padding:20px 12px;border-top:3px solid var(--pink)}footer b{color:var(--gold)}footer a{color:#ff8cbd}  
+.contact{background:#fff0f7;padding:14px;border-radius:12px;text-align:center;margin-top:14px;line-height:1.8}  
+.result{display:none;background:#eafff3;border:1px solid #9ad8b6;border-radius:10px;padding:14px;margin-top:14px;line-height:1.7}  
+@media(min-width:700px){nav{grid-template-columns:repeat(4,1fr)}.grid{grid-template-columns:repeat(4,1fr)}main{padding-top:25px}.hero{padding:55px 35px}.payment-grid{grid-template-columns:repeat(3,1fr)}}  
+</style>  
+</head>  
+<body>  
+<header>  
+ <div class="top">  
+  <div class="brand"><div class="brand-mark">♛</div><div><strong>STAR</strong><small>BEAUTY PARLOUR & ACADEMY</small></div></div>  
+  <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>  
+ </div>  
+ <nav id="nav">  
+  <button onclick="showPage('home')">⌂ मुख्य पेज</button>  
+  <button onclick="showPage('registration')">✚ New Registration</button>  
+  <button onclick="showPage('form')">▤ Online Form Fillup</button>  
+  <button onclick="showPage('marksheet')">⬇ Marksheet Download</button>  
+  <button onclick="showPage('services')">✿ Other Services</button>  
+  <button onclick="showPage('courses')">▣ Course Details</button>  
+  <button onclick="showPage('contact')">☎ Contact Us</button>  
+  <button onclick="showPage('login')">♙ Student Login</button>  
+ </nav>  
+</header>  
+<main>  
+<section id="home" class="page active">  
+ <div class="hero">  
+  <div class="crown">♛</div><h1>STAR</h1><h2>BEAUTY PARLOUR</h2><h2 style="color:#f5c84b">& ACADEMY</h2>  
+  <p class="tag">Enhance Your Beauty... Build Your Future...</p>  
+  <p>सौंदर्य, सीख और आत्मविश्वास का एक ही स्थान</p>  
+  <div class="pills"><span class="pill">✿ SKIN CARE</span><span class="pill">✿ HAIR CARE</span><span class="pill">✿ NAIL ART</span><span class="pill">✿ MAKEUP</span><span class="pill">✿ BEAUTY COURSES</span></div>  
+  <div class="location">📍 <b>Simga</b><br>District - Balodabazar, Chhattisgarh</div>  
+ </div>  
+ <h2 class="section-title" style="margin-top:20px">हमारी ऑनलाइन सेवाएँ</h2>  
+ <div class="grid">  
+  <button class="tile pink" onclick="showPage('registration')"><span>♙+</span>New Registration<small>नया पंजीकरण</small></button>  
+  <button class="tile blue" onclick="showPage('form')"><span>▤</span>Online Form Fillup<small>ऑनलाइन आवेदन</small></button>  
+  <button class="tile green" onclick="showPage('marksheet')"><span>⬇</span>Marksheet Download<small>अंकसूची डाउनलोड</small></button>  
+  <button class="tile orange" onclick="showPage('services')"><span>▧</span>Other Services<small>अन्य सेवाएँ</small></button>  
+ </div>  
+ <div class="contact">सहायता के लिए संपर्क करें<br><b>Phone / WhatsApp: 7770886309</b><br>Email: govinddewangan85@gmail.com</div>  
+</section>  <section id="registration" class="page">  
+ <h2 class="section-title">New Registration | नया पंजीकरण</h2><p class="sub">विद्यार्थी पंजीकरण के लिए नीचे जानकारी भरें।</p>  
+ <form class="card" onsubmit="registerStudent(event)">  
+  <label>पूरा नाम *</label><input name="name" required placeholder="जैसे - सीता शर्मा">  
+  <label>मोबाइल नंबर *</label><input name="mobile" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10 अंकों का नंबर">  
+  <label>ईमेल आईडी</label><input name="email" type="email" placeholder="example@email.com">  
+  <label>पता *</label><textarea name="address" required placeholder="पूरा पता"></textarea>  
+  <label>कोर्स का चयन *</label><select name="course" required><option value="">-- कोर्स चुनें --</option><option>Skin Care & Facial</option><option>Hair Care & Styling</option><option>Nail Art & Care</option><option>Makeup Artist Course</option><option>Bridal Makeup</option></select>  
+  <label>श्रेणी</label><select name="category"><option>नया विद्यार्थी</option><option>अन्य</option></select>  
+  <button class="btn">रजिस्टर करें</button><div id="regResult" class="result"></div>  
+ </form>  
+</section>  <section id="form" class="page">  
+ <h2 class="section-title">Online Form Fillup | ऑनलाइन आवेदन</h2><p class="sub">आवेदन के लिए व्यक्तिगत और शैक्षणिक जानकारी भरें।</p>  
+ <form class="card" onsubmit="submitApplication(event)">  
+  <label>पूरा नाम *</label><input required placeholder="अपना नाम लिखें">  
+  <label>जन्म तिथि *</label><input type="date" required>  
+  <label>मोबाइल नंबर *</label><input required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10 अंकों का नंबर">  
+  <label>लिंग *</label><select required><option value="">-- चुनें --</option><option>महिला</option><option>पुरुष</option><option>अन्य</option></select>  
+  <label>शैक्षणिक योग्यता *</label><select required><option value="">-- चुनें --</option><option>5वीं</option><option>8वीं</option><option>10वीं</option><option>12वीं</option><option>स्नातक</option><option>अन्य</option></select>  
+  <label>कोर्स का चयन *</label><select required><option value="">-- कोर्स चुनें --</option><option>Skin Care & Facial</option><option>Hair Care & Styling</option><option>Nail Art & Care</option><option>Makeup Artist Course</option><option>Bridal Makeup</option></select>  
+  <label>पता *</label><textarea required placeholder="पूरा पता"></textarea>  
+  <div class="notice">आवेदन शुल्क/कोर्स फीस संस्था द्वारा निर्धारित होगी। भुगतान शुरू करने से पहले राशि और नियम जाँच लें।</div>  
+  <button class="btn">आवेदन आगे बढ़ाएँ</button><div id="appResult" class="result"></div>  
+ </form>  
+</section>  <section id="payment" class="page">  
+ <h2 class="section-title">Payment | भुगतान करें</h2>  
+ <div class="card"><label>आवेदन शुल्क / कोर्स फीस (₹)</label><input id="amount" type="number" min="1" placeholder="राशि संस्था से पुष्टि करें">  
+ <label>भुगतान का तरीका चुनें</label>  
+ <div class="payment-grid">  
+  <button type="button" class="pay-option" onclick="choosePay(this,'Google Pay')">🌈 Google Pay</button>  
+  <button type="button" class="pay-option" onclick="choosePay(this,'PhonePe')">🟣 PhonePe</button>  
+  <button type="button" class="pay-option" onclick="choosePay(this,'Paytm')">🔵 Paytm</button>  
+  <button type="button" class="pay-option" onclick="choosePay(this,'UPI')">▣ UPI</button>  
+  <button type="button" class="pay-option" onclick="choosePay(this,'Debit/Credit Card')">💳 Debit / Credit Card</button>  
+  <button type="button" class="pay-option" onclick="choosePay(this,'Net Banking')">🏦 Net Banking</button>  
+ </div>  
+ <button class="btn" onclick="paymentInfo()">भुगतान के लिए आगे बढ़ें</button><div id="payResult" class="result"></div>  
+ <div class="notice">महत्वपूर्ण: अभी यह वेबसाइट का डिजाइन/डेमो है। असली पैसे काटने, UPI/कार्ड भुगतान और ऑटो रसीद के लिए Razorpay जैसे अधिकृत payment gateway का merchant account और server-side integration जरूरी है। अभी कोई पैसा नहीं कटेगा।</div></div>  
+</section>  <section id="marksheet" class="page">  
+ <h2 class="section-title">Marksheet Download | अंकसूची डाउनलोड</h2>  
+ <form class="card" onsubmit="marksheetInfo(event)">  
+  <label>Registration Number *</label><input id="roll" required placeholder="उदाहरण: SBPA2026001">  
+  <label>जन्म तिथि *</label><input id="dob" type="date" required>  
+  <label>कोर्स का चयन *</label><select required><option value="">-- कोर्स चुनें --</option><option>Skin Care & Facial</option><option>Hair Care & Styling</option><option>Nail Art & Care</option><option>Makeup Artist Course</option><option>Bridal Makeup</option></select>  
+  <button class="btn">अंकसूची खोजें</button><div id="markResult" class="result"></div>  
+ </form>  
+ <div class="notice">असली अंकसूची तभी डाउनलोड होगी जब विद्यार्थियों के अंक और पंजीकरण रिकॉर्ड सुरक्षित रखने के लिए डेटाबेस/backend जोड़ा जाएगा।</div>  
+</section>  <section id="services" class="page">  
+ <h2 class="section-title">Other Services | अन्य सेवाएँ</h2>  
+ <div class="card">  
+  <div class="service"><span>📚</span><div><b>Course Details</b><small>कोर्स की जानकारी</small></div></div>  
+  <div class="service"><span>🏅</span><div><b>Certificate Information</b><small>प्रमाणपत्र संबंधी जानकारी</small></div></div>  
+  <div class="service"><span>🖼️</span><div><b>Gallery</b><small>हमारी गतिविधियाँ और फोटो</small></div></div>  
+  <div class="service"><span>☎️</span><div><b>Contact Us</b><small>संपर्क करें</small></div></div>  
+  <div class="service"><span>❔</span><div><b>FAQ</b><small>अक्सर पूछे जाने वाले सवाल</small></div></div>  
+  <button class="btn" onclick="showPage('courses')">कोर्स देखें</button>  
+ </div>  
+</section>  <section id="courses" class="page">  
+ <h2 class="section-title">Course Details | कोर्स की जानकारी</h2>  
+ <div class="card"><h3>हमारे प्रमुख कोर्स</h3>  
+  <div class="service"><span>🌸</span><div><b>Skin Care & Facial</b><small>स्किन केयर और फेशियल</small></div></div>  
+  <div class="service"><span>💇</span><div><b>Hair Care & Styling</b><small>हेयर केयर और हेयर स्टाइलिंग</small></div></div>  
+  <div class="service"><span>💅</span><div><b>Nail Art & Care</b><small>नेल आर्ट और केयर</small></div></div>  
+  <div class="service"><span>💄</span><div><b>Makeup Artist Course</b><small>मेकअप आर्टिस्ट कोर्स</small></div></div>  
+  <div class="service"><span>👰</span><div><b>Bridal Makeup</b><small>ब्राइडल मेकअप</small></div></div>  
+  <div class="notice">कोर्स की अवधि, फीस और प्रमाणपत्र की पात्रता की पुष्टि Academy से करें। किसी सरकारी मान्यता का दावा तभी करें जब आधिकारिक मान्यता प्राप्त हो।</div>  
+  <button class="btn" onclick="showPage('registration')">अभी रजिस्टर करें</button>  
+ </div>  
+</section>  <section id="contact" class="page">  
+ <h2 class="section-title">Contact Us | संपर्क करें</h2>  
+ <div class="card" style="text-align:center;line-height:2"><h2 style="color:#c20d5d">STAR BEAUTY PARLOUR & ACADEMY</h2><b>Trainer: Priti Dewangan</b><br><b>Owner: Govind Dewangan</b><br>📍 Simga, District - Balodabazar, Chhattisgarh<br>📞 <a href="tel:7770886309">7770886309</a><br>✉️ <a href="mailto:govinddewangan85@gmail.com">govinddewangan85@gmail.com</a><br><a href="https://wa.me/917770886309" target="_blank" rel="noopener">WhatsApp पर संपर्क करें</a></div>  
+</section>  <section id="login" class="page">  
+ <h2 class="section-title">Student Login | विद्यार्थी लॉगिन</h2>  
+ <div class="card"><label>Registration Number</label><input placeholder="अपना रजिस्ट्रेशन नंबर"><label>मोबाइल नंबर</label><input inputmode="numeric" placeholder="10 अंकों का नंबर"><button class="btn" onclick="alert('Student login के लिए सुरक्षित database और OTP व्यवस्था जोड़नी होगी।')">लॉगिन करें</button><div class="notice">विद्यार्थियों का सुरक्षित लॉगिन backend और OTP verification जुड़ने के बाद चालू होगा।</div></div>  
+</section>  
+</main>  
+<footer><b>STAR BEAUTY PARLOUR & ACADEMY</b><br>Simga, Balodabazar (C.G.)<br><span style="color:#ff8cbd">Learn | Grow | Be Confident</span></footer>  
+<script>  
+let selectedPayment='';  
+function toggleMenu(){document.getElementById('nav').classList.toggle('open')}  
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));const page=document.getElementById(id);if(page)page.classList.add('active');document.getElementById('nav').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'})}  
+function registerStudent(e){e.preventDefault();const data=new FormData(e.target);const num='SBPA'+new Date().getFullYear()+Math.floor(1000+Math.random()*9000);const box=document.getElementById('regResult');box.style.display='block';box.innerHTML='<b>डेमो पंजीकरण तैयार!</b><br>अस्थायी नंबर: <b>'+num+'</b><br>नाम: '+escapeHtml(data.get('name'))+'<br><span>यह रिकॉर्ड अभी सर्वर पर सेव नहीं हुआ है। स्थायी पंजीकरण के लिए database जोड़ना होगा।</span>'; }  
+function submitApplication(e){e.preventDefault();document.getElementById('appResult').style.display='block';document.getElementById('appResult').innerHTML='<b>आवेदन का डेमो तैयार है।</b><br>अगले चरण में भुगतान पेज खुलेगा। अभी आवेदन सर्वर पर जमा नहीं हुआ है।';showPage('payment')}  
+function choosePay(el,name){document.querySelectorAll('.pay-option').forEach(x=>x.classList.remove('selected'));el.classList.add('selected');selectedPayment=name}  
+function paymentInfo(){let amount=document.getElementById('amount').value;let box=document.getElementById('payResult');box.style.display='block';box.innerHTML=amount&&Number(amount)>0&&selectedPayment?'<b>चयनित तरीका:</b> '+selectedPayment+'<br><b>राशि:</b> ₹'+Number(amount).toFixed(2)+'<br>असली भुगतान चालू करने के लिए payment gateway account और सुरक्षित server integration जोड़ना बाकी है। अभी कोई पैसा नहीं कटेगा।':'कृपया सही राशि भरें और भुगतान का तरीका चुनें।'}  
+function marksheetInfo(e){e.preventDefault();let b=document.getElementById('markResult');b.style.display='block';b.innerHTML='यह registration number अभी demo search में है। असली marksheet दिखाने के लिए विद्यार्थी के अंक database में दर्ज करने होंगे।'}  
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}  
+</script>  
+</body></html>
